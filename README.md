@@ -1,13 +1,19 @@
-Every great project needs a quality README with information about the app - what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions so that other developers are more likely to use and contribute to the success of the project.
+Every great project needs a quality README with information about your app - what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions so that other developers are more likely to use and contribute to the success of the project.
 
 This is a command-line application that runs with Node.js that dynamically generates a README.md file based on input about your project. Check out the ExampleREADME.md in this repo as an example.
 
 Table of Contents
+
 -Installation
+
 -Usage
+
 -Methodology
+
 -License
+
 -Installation
+
 -To generate your own README, git clone the repo down to your local so you have the Node project on your local.
 
 Run npm install in order to install the following npm package dependencies as specified in the package.json:
@@ -22,7 +28,7 @@ After answering all the prompts, your README file will be named 'ExampleREADME.m
 
 The README has some automatically generated badges for your repo courtesy of shields.io and will include your profile picture & email from GitHub.
 
-Usage-
+Example-
 
 
 (put gif here)
@@ -35,7 +41,8 @@ Finally, fs.writeFile is used to generate your project's README.md file. Check o
 
 
 
-Methodology
+Methodology-
+
 The application uses modularization by separating the GitHub API call and generation of the markdown into separate modules: api.js and generateMarkdown.js, respectively, inside the utils folder.
 
 The application also uses, syntax and paradigms introduced in ES6 and beyond, including:
