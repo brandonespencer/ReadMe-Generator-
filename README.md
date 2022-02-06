@@ -11,7 +11,6 @@ Table of contents
 
 -Contributors
 
--Test
 
 -Repository Link
 
@@ -42,7 +41,7 @@ Example-
 https://user-images.githubusercontent.com/46231696/152679044-c0329134-bba9-4ef0-b6d2-10fd66461a79.mp4
 
 
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 When you run node index.js, the application uses the inquirer package to prompt you in the command line with a series of questions about your GitHub and about your project.
 
@@ -65,5 +64,5 @@ async/await to handle inquirer, axios, and fs.writeFile promises.
 
 https://github.com/brandonespencer/ReadMe-Generator-Node.js-and-ES6-.git
 
-
+https://github.com/brandonespencer
 
