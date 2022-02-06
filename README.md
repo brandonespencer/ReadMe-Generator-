@@ -63,6 +63,7 @@ const, let,
 Template literals, and
 async/await to handle inquirer, axios, and fs.writeFile promises.
 
+https://github.com/brandonespencer/ReadMe-Generator-Node.js-and-ES6-.git
 
-GitHub: @Brandonespencer
+
 
