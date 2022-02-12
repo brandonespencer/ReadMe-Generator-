@@ -1,144 +1,28 @@
-function generateMarkdown(userResponses, userInfo) {
-
-    // Generate Table of Contents conditionally based on userResponses
-    let draftToC = `## Table of Contents`;
+// function to generate markdown for README
+function generateMarkdown(data) {
+    return `
+  ${"# " + data.title }
+  ${"## DEVELOPED BY: " +  '\n' + "github.com/" + data.gitHubName}
+  ${"## Table of Contents" }
+  * [Description](#description:)
+  * [Languages](#languages-used:)
+  * [Installation](#installation:)
+  * [Contributing Developers](#contributing-developers:)
+  * [Questions](#questions:)
+  * [License(s)](#license(s):)
   
-    if (userResponses.installation !== '') { draftToC += `
-    * [Installation](#installation)` };
-  
-    if (userResponses.usage !== '') { draftToC += `
-    * [Usage](#usage)` };
-  
-    if (userResponses.contributing !== '') { draftToC += `
-    * [Contributing](#contributing)` };
-  
-    if (userResponses.tests !== '') { draftToC += `
-    * [Tests](#tests)` };
-  
-  
-    // Generate markdown for the top required portions of the README
-    let draftMarkdown = 
-    `# ${userResponses.title}
-  
-    ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor)
-    
-    Check out the badges hosted by [shields.io](https://shields.io/).
-    
-    
-    ## Description 
-    
-    *The what, why, and how:* 
-    
-    ${userResponses.description}
-  
-    `
-  
-    // Add Table of Contents to markdown
-    draftMarkdown += draftToC;
-   
-    // Add License section since License is required to Table of Contents
-    draftMarkdown += `
-    * [License](#license)`;
-    
-  
-    // Optional Installation section
-    if (userResponses.installation !== '') {
-    
-    draftMarkdown +=
-    `
-    
-    ## Installation
-    
-    *Steps required to install project and how to get the development environment running:*
-    
-    ${userResponses.installation}`
-    };
-    
-  
-    // Optional Usage section
-    if (userResponses.usage !== '') {
-    
-    draftMarkdown +=
-    
-    `
-    
-    ## Usage 
-    
-    *Instructions and examples for use:*
-    
-    ${userResponses.usage}`
-    };
-    
-    
-    // Optional Contributing section
-    if (userResponses.contributing !== '') {
-  
-    draftMarkdown +=
-      
-    `
-    
-    ## Contributing
-    
-    *If you would like to contribute it, you can follow these guidelines for how to do so.*
-    
-    ${userResponses.contributing}`
-    };
-    
-  
-    // Optional Tests section
-    if (userResponses.tests !== '') {
-    
-    draftMarkdown +=
-    `
-    
-    ## Tests
-    
-    *Tests for application and how to run them:*
-    
-    ${userResponses.tests}`
-    };
-  
-  
-    // License section is required
-    draftMarkdown +=
-    `
-    
-    ## License
-    
-    ${userResponses.license}
-    `;
-  
-  
-    // Questions / About Developer section
-    let draftDev = 
-    `
-    ---
-    
-    ## Questions?
-  
-    <img src="${userInfo.avatar_url}" alt="${userInfo.login}" width="40%" />
-    
-    For any questions, please contact me with the information below:
-   
-    GitHub: [@${userInfo.login}](${userInfo.url})
-    `;
-  
-    // If GitHub email is not null, add to Developer section
-    if (userInfo.email !== null) {
-    
-    draftDev +=
-    `
-  
-    Email: ${userInfo.email}
-  
-    `};
-  
-    // Add developer section to markdown
-    draftMarkdown += draftDev;
-  
-    // Return markdown
-    return draftMarkdown;
-    
+  ${"## DESCRIPTION:"+ '\n' + data.description}
+  ${"## LANGUAGES USED:" + '\n' + data.languages}
+  ${"## INSTALLATION:" + '\n' + data.installation}
+  ${"## CONTRIBUTING DEVELOPERS:" + '\n'  + data.collaborators}
+  ${"## QUESTIONS:" + '\n' + "If you have any questions, you can reach me here: " + data.email}
+  ${"## LICENSE(S)" + '\n'}
+  ${'\n' + `![GitHub](https://img.shields.io/github/license/${data.gitHubName}/${data.title})`}
+  ${'\n' + `![GitHub followers](https://img.shields.io/github/followers/${data.gitHubName}?label=GitHub%20Followers&logo=Github&?style=social)`}
+  ${'\n' + `![GitHub language count](https://img.shields.io/github/languages/count/${data.gitHubName}/${data.title}?logo=GitHub)`}
+  ${'\n' + `![GitHub last commit](https://img.shields.io/github/last-commit/${data.gitHubName}/${data.title})`}
+  `;
   }
-  
   module.exports = generateMarkdown;
+  
+  
